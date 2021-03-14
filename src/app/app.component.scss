@@ -1,0 +1,17 @@
+.todoList {
+  display: flex;
+}
+
+.todo {
+  width: 100%;
+  background-color: brown;
+  height: 100px;
+  margin: 2px;
+  text-align: center;
+}
+
+.todo-title {
+  position: relative;
+  top: 35px;
+  font-size: 24px;
+}
