@@ -1,4 +1,8 @@
-<mat-card *ngIf="todo">
-  <mat-card-title>{{todo.title}}</mat-card-title>
-  <mat-card-content style="text-align: justify">{{todo.description}}</mat-card-content>
-</mat-card>
+<div>
+  <mat-card *ngIf="todo">
+    <mat-card-title>{{todo.title}}</mat-card-title>
+    <mat-card-content style="text-align: justify">{{todo.description}}</mat-card-content>
+    <mat-card-footer>{{todo.date | date:'MMM d, y, h:mm:ss'}}</mat-card-footer>
+  </mat-card>
+  <button mat-raised-button color="primary" [routerLink]="''">Home</button>
+</div>

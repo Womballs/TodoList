@@ -1,0 +1,16 @@
+<div class="container" [formGroup]="todoForm">
+  <mat-form-field id="title" appearance="fill">
+    <mat-label>
+      Title
+      <span class="text-danger" *ngIf="todoForm.controls.title.errors && (todoForm.controls.title.dirty || todoForm.controls.title.touched)">is required</span>
+    </mat-label>
+    <input formControlName="title" matInput>
+  </mat-form-field>
+  <br/>
+  <mat-form-field id="description" appearance="fill">
+    <mat-label>Description</mat-label>
+    <textarea formControlName="description" matInput></textarea>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="saveTodo()">Save Todo</button>
+</div>

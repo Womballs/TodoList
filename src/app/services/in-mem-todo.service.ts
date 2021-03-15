@@ -3,9 +3,11 @@ import {State} from '../interfaces/todo';
 
 export class InMemTodoService implements InMemoryDbService {
   createDb(): any {
+    const now = new Date();
     const todos = [
       {
         id: 0,
+        date: new Date(now.getTime() - 4 * 60 * 60 * 1000),
         state: State.UnDone,
         title: 'test',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id nisl vitae enim lobortis elementum. Cras ultrices sollicitudin sapien sed consequat. Donec est mi, molestie eget justo eu, commodo semper mauris. Cras sapien nibh, porta in bibendum id, efficitur sit amet nibh. Nam convallis egestas mauris vel efficitur. Phasellus ac ex sem. Proin imperdiet mauris turpis, nec pellentesque massa vehicula non. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam interdum vitae nibh eu facilisis. Praesent non mauris ut mi feugiat gravida quis in mi. Aenean sed elit pellentesque, laoreet sem blandit, eleifend purus. Fusce imperdiet tempor ultrices. Pellentesque finibus est tellus, vitae efficitur sapien pretium vitae. Etiam in dictum tellus. Curabitur molestie dolor ante, nec venenatis sem finibus et. Mauris semper tristique vehicula.\n' +
@@ -16,6 +18,7 @@ export class InMemTodoService implements InMemoryDbService {
       },
       {
         id: 1,
+        date: new Date(now.getTime() - 28 * 60 * 60 * 1000),
         state: State.UnDone,
         title: 'test1',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id nisl vitae enim lobortis elementum. Cras ultrices sollicitudin sapien sed consequat. Donec est mi, molestie eget justo eu, commodo semper mauris. Cras sapien nibh, porta in bibendum id, efficitur sit amet nibh. Nam convallis egestas mauris vel efficitur. Phasellus ac ex sem. Proin imperdiet mauris turpis, nec pellentesque massa vehicula non. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam interdum vitae nibh eu facilisis. Praesent non mauris ut mi feugiat gravida quis in mi. Aenean sed elit pellentesque, laoreet sem blandit, eleifend purus. Fusce imperdiet tempor ultrices. Pellentesque finibus est tellus, vitae efficitur sapien pretium vitae. Etiam in dictum tellus. Curabitur molestie dolor ante, nec venenatis sem finibus et. Mauris semper tristique vehicula.\n' +
@@ -26,12 +29,14 @@ export class InMemTodoService implements InMemoryDbService {
       },
       {
         id: 2,
+        date: new Date(now.getTime() - 60 * 60 * 1000),
         state: State.UnDone,
         title: 'test2',
         description: 'Vivamus finibus, quam sit amet vestibulum lobortis, massa nisl euismod mauris, non pulvinar tortor elit et diam. Etiam vitae ultrices urna. Integer odio massa, porta id vestibulum eleifend, pharetra nec turpis. Vestibulum luctus iaculis tortor. Maecenas semper, orci eget mattis sollicitudin, arcu dolor porta nulla, sit amet mollis erat dui in felis. Proin magna enim, placerat a dolor imperdiet, luctus auctor nisl. Vestibulum nec venenatis arcu. Vivamus in ultricies mauris. Maecenas gravida et enim et efficitur. Vivamus mi lectus, vestibulum in semper at, ullamcorper sit amet neque. Integer et ante mollis, lobortis arcu nec, scelerisque massa. Quisque ultricies magna neque, vel porta urna pharetra vitae.'
       },
       {
         id: 3,
+        date: new Date(now.getTime() - 12 * 60 * 60 * 1000),
         state: State.Done,
         title: 'test3',
         description: 'Vivamus finibus, quam sit amet vestibulum lobortis, massa nisl euismod mauris, non pulvinar tortor elit et diam. Etiam vitae ultrices urna. Integer odio massa, porta id vestibulum eleifend, pharetra nec turpis. Vestibulum luctus iaculis tortor. Maecenas semper, orci eget mattis sollicitudin, arcu dolor porta nulla, sit amet mollis erat dui in felis. Proin magna enim, placerat a dolor imperdiet, luctus auctor nisl. Vestibulum nec venenatis arcu. Vivamus in ultricies mauris. Maecenas gravida et enim et efficitur. Vivamus mi lectus, vestibulum in semper at, ullamcorper sit amet neque. Integer et ante mollis, lobortis arcu nec, scelerisque massa. Quisque ultricies magna neque, vel porta urna pharetra vitae.\n' +
@@ -40,9 +45,24 @@ export class InMemTodoService implements InMemoryDbService {
       },
       {
         id: 4,
+        date: new Date(now.getTime() - 18 * 60 * 60 * 1000),
         state: State.Done,
         title: 'test4',
         description: 'Vivamus finibus, quam sit amet vestibulum lobortis, massa nisl euismod mauris, non pulvinar tortor elit et diam. Etiam vitae ultrices urna. Integer odio massa, porta id vestibulum eleifend, pharetra nec turpis. Vestibulum luctus iaculis tortor. Maecenas semper, orci eget mattis sollicitudin, arcu dolor porta nulla, sit amet mollis erat dui in felis. Proin magna enim, placerat a dolor imperdiet, luctus auctor nisl. Vestibulum nec venenatis arcu. Vivamus in ultricies mauris. Maecenas gravida et enim et efficitur. Vivamus mi lectus, vestibulum in semper at, ullamcorper sit amet neque. Integer et ante mollis, lobortis arcu nec, scelerisque massa. Quisque ultricies magna neque, vel porta urna pharetra vitae.'
+      },
+      {
+        id: 5,
+        date: new Date(now.getTime() - 11 * 60 * 60 * 1000),
+        state: State.UnDone,
+        title: 'test5',
+        description: 'Vivamus finibus, quam sit amet vestibulum lobortis, massa nisl euismod mauris, non pulvinar tortor elit et diam. Vestibulum luctus iaculis tortor. Maecenas semper, orci eget mattis sollicitudin, arcu dolor porta nulla, sit amet mollis erat dui in felis. Proin magna enim, placerat a dolor imperdiet, luctus auctor nisl. Vestibulum nec venenatis arcu. Vivamus in ultricies mauris. Maecenas gravida et enim et efficitur. Vivamus mi lectus, vestibulum in semper at, ullamcorper sit amet neque. Integer et ante mollis, lobortis arcu nec, scelerisque massa. Quisque ultricies magna neque, vel porta urna pharetra vitae.'
+      },
+      {
+        id: 6,
+        date: new Date(now.getTime() - 30 * 60 * 1000),
+        state: State.Done,
+        title: 'test6',
+        description: 'Vivamus finibus, quam sit amet vestibulum, massa nisl euismod mauris, non pulvinar tortor elit et diam. Etiam vitae ultrices urna. Integer odio massa, porta id vestibulum eleifend, pharetra nec turpis. Vestibulum luctus iaculis tortor. Maecenas semper, orci eget mattis sollicitudin, arcu dolor porta nulla, sit amet mollis erat dui in felis. Proin magna enim, placerat a dolor imperdiet, luctus auctor nisl. Vestibulum nec venenatis arcu. Vivamus in ultricies mauris. Maecenas gravida et enim et efficitur. Vivamus mi lectus, vestibulum in semper at, ullamcorper sit amet neque. Integer et ante mollis, lobortis arcu nec, scelerisque massa. Quisque ultricies magna neque, vel porta urna pharetra vitae.'
       }
     ];
     return {todos};

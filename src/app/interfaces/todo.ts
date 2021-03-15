@@ -5,6 +5,7 @@ export enum State {
 
 export interface Todo {
   id: number;
+  date: Date;
   state: State;
   title: string;
   description: string;
