@@ -11,6 +11,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 
 import {InMemTodoService} from './services/in-mem-todo.service';
+import {TodosReducer} from './store/todos/todos.reducer';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import {InMemTodoService} from './services/in-mem-todo.service';
     AppRoutingModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemTodoService),
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot({todos: TodosReducer}),
     BrowserAnimationsModule,
     MatCardModule,
     MatCheckboxModule

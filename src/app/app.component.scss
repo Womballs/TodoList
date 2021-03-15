@@ -10,6 +10,10 @@
   text-align: center;
 }
 
+.todo.done {
+  background-color: #008800;
+}
+
 .todo-title {
   position: relative;
   top: 35px;

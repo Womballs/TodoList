@@ -1,9 +1,10 @@
 export enum State {
-  Done = 'done',
-  UnDone = 'undone'
+  Done = 0,
+  UnDone
 }
 
 export interface Todo {
+  id: number;
   state: State;
   title: string;
 }
