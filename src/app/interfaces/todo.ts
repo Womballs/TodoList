@@ -1,6 +1,6 @@
 export enum State {
-  Done = "done",
-  UnDone = "undone"
+  Done = 'done',
+  UnDone = 'undone'
 }
 
 export interface Todo {
