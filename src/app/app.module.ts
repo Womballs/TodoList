@@ -12,10 +12,14 @@ import {AppComponent} from './app.component';
 
 import {InMemTodoService} from './services/in-mem-todo.service';
 import {TodosReducer} from './store/todos/todos.reducer';
+import {ListComponent} from './components/list/list.component';
+import {DetailsComponent} from './components/details/details.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

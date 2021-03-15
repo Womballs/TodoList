@@ -7,4 +7,5 @@ export interface Todo {
   id: number;
   state: State;
   title: string;
+  description: string;
 }

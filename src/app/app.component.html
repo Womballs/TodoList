@@ -1,6 +1,1 @@
-<div class="todoList">
-  <mat-card *ngFor="let todo of todoList" [ngClass]="{'todo': true, 'done': !todo.state}">
-    <mat-checkbox (click)="toggleState(todo)" [checked]="!todo.state"></mat-checkbox>
-    <span class="todo-title">{{todo.title}}</span>
-  </mat-card>
-</div>
+<router-outlet></router-outlet>
