@@ -1,5 +1,6 @@
 import {TestBed} from '@angular/core/testing';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
+import {Observable} from 'rxjs';
 import {provideMockStore, MockStore} from '@ngrx/store/testing';
 import {TodosService} from './todos.service';
 
@@ -24,5 +25,9 @@ describe('TodosService', () => {
 
   it('should be created', () => {
     expect(service).toBeTruthy();
+  });
+
+  it('storeAllTodos should return subscription', () => {
+    expect(service.storeAllTodos()).toBeInstanceOf(Observable);
   });
 });

@@ -1,6 +1,10 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { DetailsComponent } from './details.component';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
+import {ActivatedRoute} from '@angular/router';
+import {RouterTestingModule} from '@angular/router/testing';
+import {of} from 'rxjs';
+import {StoreModule} from '@ngrx/store';
+import {DetailsComponent} from './details.component';
+import {TodosReducer} from '../../store/todos/todos.reducer';
 
 describe('DetailsComponent', () => {
   let component: DetailsComponent;
@@ -8,9 +12,20 @@ describe('DetailsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DetailsComponent ]
-    })
-    .compileComponents();
+      imports: [
+        RouterTestingModule,
+        StoreModule.forRoot({todos: TodosReducer})
+      ],
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            params: of({id: 1})
+          }
+        }
+      ],
+      declarations: [DetailsComponent]
+    }).compileComponents();
   });
 
   beforeEach(() => {
