@@ -10,7 +10,7 @@ import {Todo} from '../../interfaces/todo';
   styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent implements OnInit {
-  public todo: any;
+  public todo: any = {};
   public state$: Observable<Array<Todo>>;
 
   constructor(private route: ActivatedRoute,
@@ -21,7 +21,7 @@ export class DetailsComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.state$.subscribe((todos: Array<Todo>) => {
-        this.todo = todos.find(t => t.id === +params.id);
+        this.todo = todos.find(t => t.id === +params.id) || {};
       });
     });
   }
